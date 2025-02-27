@@ -47,8 +47,8 @@
         !function (i, n) { var o, s, e; function c(e) { try { var t = { supportTests: e, timestamp: (new Date).valueOf() }; sessionStorage.setItem(o, JSON.stringify(t)) } catch (e) { } } function p(e, t, n) { e.clearRect(0, 0, e.canvas.width, e.canvas.height), e.fillText(t, 0, 0); var t = new Uint32Array(e.getImageData(0, 0, e.canvas.width, e.canvas.height).data), r = (e.clearRect(0, 0, e.canvas.width, e.canvas.height), e.fillText(n, 0, 0), new Uint32Array(e.getImageData(0, 0, e.canvas.width, e.canvas.height).data)); return t.every(function (e, t) { return e === r[t] }) } function u(e, t, n) { switch (t) { case "flag": return n(e, "\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f", "\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f") ? !1 : !n(e, "\ud83c\uddfa\ud83c\uddf3", "\ud83c\uddfa\u200b\ud83c\uddf3") && !n(e, "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f", "\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f"); case "emoji": return !n(e, "\ud83d\udc26\u200d\u2b1b", "\ud83d\udc26\u200b\u2b1b") }return !1 } function f(e, t, n) { var r = "undefined" != typeof WorkerGlobalScope && self instanceof WorkerGlobalScope ? new OffscreenCanvas(300, 150) : i.createElement("canvas"), a = r.getContext("2d", { willReadFrequently: !0 }), o = (a.textBaseline = "top", a.font = "600 32px Arial", {}); return e.forEach(function (e) { o[e] = t(a, e, n) }), o } function t(e) { var t = i.createElement("script"); t.src = e, t.defer = !0, i.head.appendChild(t) } "undefined" != typeof Promise && (o = "wpEmojiSettingsSupports", s = ["flag", "emoji"], n.supports = { everything: !0, everythingExceptFlag: !0 }, e = new Promise(function (e) { i.addEventListener("DOMContentLoaded", e, { once: !0 }) }), new Promise(function (t) { var n = function () { try { var e = JSON.parse(sessionStorage.getItem(o)); if ("object" == typeof e && "number" == typeof e.timestamp && (new Date).valueOf() < e.timestamp + 604800 && "object" == typeof e.supportTests) return e.supportTests } catch (e) { } return null }(); if (!n) { if ("undefined" != typeof Worker && "undefined" != typeof OffscreenCanvas && "undefined" != typeof URL && URL.createObjectURL && "undefined" != typeof Blob) try { var e = "postMessage(" + f.toString() + "(" + [JSON.stringify(s), u.toString(), p.toString()].join(",") + "));", r = new Blob([e], { type: "text/javascript" }), a = new Worker(URL.createObjectURL(r), { name: "wpTestEmojiSupports" }); return void (a.onmessage = function (e) { c(n = e.data), a.terminate(), t(n) }) } catch (e) { } c(n = f(s, u, p)) } t(n) }).then(function (e) { for (var t in e) n.supports[t] = e[t], n.supports.everything = n.supports.everything && n.supports[t], "flag" !== t && (n.supports.everythingExceptFlag = n.supports.everythingExceptFlag && n.supports[t]); n.supports.everythingExceptFlag = n.supports.everythingExceptFlag && !n.supports.flag, n.DOMReady = !1, n.readyCallback = function () { n.DOMReady = !0 } }).then(function () { return e }).then(function () { var e; n.supports.everything || (n.readyCallback(), (e = n.source || {}).concatemoji ? t(e.concatemoji) : e.wpemoji && e.twemoji && (t(e.twemoji), t(e.wpemoji))) })) }((window, document), window._wpemojiSettings);
         /* ]]> */
     </script>
-  
-        <link rel="stylesheet" href="./style.css">
+
+    <link rel="stylesheet" href="./style.css">
     <style id='nanotext-inline-css' type='text/css'>
         body,
         .site,
@@ -25047,43 +25047,52 @@ new spinners
         .avada-has-rev-slider-styles .rev_slider_wrapper {
             transform: none;
         }
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed;
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
 
-/* Modal Content */
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
-}
+        /* The Modal (background) */
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            z-index: 1;
+            /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
 
-/* The Close Button */
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
+        /* Modal Content */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            /* Could be more or less, depending on screen size */
+        }
 
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
+        /* The Close Button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
 
         /* rs-carousel-wrap{
 	transform: scale(0.3);
@@ -25163,11 +25172,11 @@ new spinners
             .next {
                 right: 10px;
             }
-            #dropdownMenu {
-    display: none;
-    transition: opacity 0.3s ease;
-}
 
+            #dropdownMenu {
+                display: none;
+                transition: opacity 0.3s ease;
+            }
         </style>
     </noscript>
     <!-- Latest Font Awesome CDN -->
@@ -25357,13 +25366,12 @@ new spinners
                         <div class="main-content-inner">
                             <div class="content">
                                 <div class="wpb-content-wrapper">
-                                    <div style="" class="vc_row wpb_row vc_row-fluid"
-                                     >
-                                        <div class="row-inner"                                      style="    background: linear-gradient(to right, #c2e7ff, #e6f7ff); /* Same gradient for consistency */"
-                                        >
-                                            <div class="wpb_column vc_column_container vc_col-sm-12" 
-                                            
-                                            >
+                                    <div style="" class="vc_row wpb_row vc_row-fluid">
+                                        <div class="row-inner"
+                                            style="background: linear-gradient(to right, #c2e7ff, #e6f7ff); width: 100%;">
+
+
+                                            <div class="wpb_column vc_column_container vc_col-sm-12">
                                                 <div class="vc_column-inner">
                                                     <div class="wpb_wrapper">
                                                         <!-- START Main Slider REVOLUTION SLIDER 6.6.16 -->
@@ -25380,7 +25388,8 @@ new spinners
 
                                                                     <rs-static-layers data-key="staticlayers"><!--
                                 
-                                                        --><rs-layer-wrap class="rs-parallax-wrap rs-layer-hidden"
+                                                        -->
+                                                                        <!-- <rs-layer-wrap class="rs-parallax-wrap rs-layer-hidden"
                                                                             style="position: absolute; display: block; pointer-events: auto; left: 44px; top: 380px; z-index: 13; visibility: visible; perspective: 601px;"><a
                                                                                 id="slider-8-slide-8-layer-0"
                                                                                 class="rs-layer f-r btn-select rev-btn rs-layer-static rs-waction rs-wclickaction"
@@ -25404,7 +25413,8 @@ new spinners
                                                                                 data-stylerecorder="true"
                                                                                 data-initialised="true">How can we help
                                                                                 you?
-                                                                            </a></rs-layer-wrap><!--
+                                                                            </a></rs-layer-wrap> -->
+                                                                        <!--
                                 
                                                         --><rs-layer-wrap class="rs-parallax-wrap"
                                                                             style="position: absolute; display: block; pointer-events: auto; left: 44px; top: 451px; z-index: 11; visibility: visible; perspective: 601px;"><rs-layer
@@ -25470,8 +25480,7 @@ new spinners
                                                                                     <div class="content"
                                                                                         data-stylerecorder="true"
                                                                                         style="text-align: left; line-height: 19px; letter-spacing: 0px; font-weight: 400; font-size: 12px;">
-                                                                                        Need help? <a
-                                                                                            href=""
+                                                                                        Need help? <a href=""
                                                                                             data-stylerecorder="true"
                                                                                             style="text-align: left; line-height: 19px; letter-spacing: 0px; font-weight: 400; font-size: 12px;">Contact
                                                                                             our experts</a><br>Tell us
@@ -25480,7 +25489,7 @@ new spinners
                                                                             </rs-layer></rs-layer-wrap><!--
                                 
                                                         -->
-                                                        <rs-layer-wrap class="rs-parallax-wrap"
+                                                                        <rs-layer-wrap class="rs-parallax-wrap"
                                                                             style="position: absolute; display: block; pointer-events: auto; left: 44px; top: 356px; z-index: 12; visibility: visible; perspective: 601px;"><rs-layer
                                                                                 id="slider-8-slide-8-layer-6"
                                                                                 class="f-r btn-select rev-btn rs-layer-static rs-layer rs-waction rs-wclickaction"
@@ -25526,7 +25535,7 @@ new spinners
                                                                                         style="text-align: left; line-height: 19px; letter-spacing: 0px; font-weight: 400; font-size: 14px; padding: 8px 24px;">Other</a><br>
                                                                                 </p>
                                                                             </rs-layer></rs-layer-wrap>
-                                                                            <!--
+                                                                        <!--
                                 
                                                         --><rs-layer-wrap class="rs-parallax-wrap"
                                                                             style="position: absolute; display: block; pointer-events: auto; left: 44px; top: 185px; z-index: 9; visibility: visible; perspective: 601px;"><rs-layer
@@ -25560,7 +25569,9 @@ new spinners
                                                                                 data-startslide="1" data-endslide="3"
                                                                                 data-idcheck="true"
                                                                                 data-stylerecorder="true"
-                                                                                data-initialised="true">Top-Rated Real Estate Lead Generation Services in Bangalore
+                                                                                data-initialised="true">Top-Rated Real
+                                                                                Estate Lead Generation Services in
+                                                                                Bangalore
 
 
                                                                             </rs-layer></rs-layer-wrap><!--
@@ -25763,8 +25774,8 @@ new spinners
                                                                 </script>
                                                             </rs-module-wrap><rs-fw-forcer
                                                                 style="height: 584px;"></rs-fw-forcer></rs-fullwidth-wrap>
-                                                                
-                                                                
+
+
                                                         <!-- END REVOLUTION SLIDER -->
                                                     </div>
                                                 </div>
@@ -26906,45 +26917,45 @@ As I continue my journey in Deloitte, I often find myself reflecting on the inva
 </body>
 
 <script>
-    $(document).ready(function(){
-    // Click event to toggle the dropdown menu
-    $('#slider-8-slide-8-layer-6').click(function() {
-        $('#dropdownMenu').toggle();  // Toggle visibility of the dropdown menu
+    $(document).ready(function () {
+        // Click event to toggle the dropdown menu
+        $('#slider-8-slide-8-layer-6').click(function () {
+            $('#dropdownMenu').toggle();  // Toggle visibility of the dropdown menu
+        });
     });
-});
 
-// Get the modal
-var modal = document.getElementById("contactModal");
+    // Get the modal
+    var modal = document.getElementById("contactModal");
 
-// Get the button that opens the modal
-var btn = document.getElementById("contact-experts");
+    // Get the button that opens the modal
+    var btn = document.getElementById("contact-experts");
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks the button, open the modal
-btn.onclick = function() {
-  modal.style.display = "block";
-}
+    // When the user clicks the button, open the modal
+    btn.onclick = function () {
+        modal.style.display = "block";
+    }
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
 
-// Handle form submission (example, you can replace it with actual form handling)
-document.getElementById("contact-form").onsubmit = function(event) {
-  event.preventDefault();
-  alert("Form submitted! Name: " + document.getElementById("name").value + ", Phone: " + document.getElementById("phone").value);
-  modal.style.display = "none"; // Close the modal after submission
-}
+    // Handle form submission (example, you can replace it with actual form handling)
+    document.getElementById("contact-form").onsubmit = function (event) {
+        event.preventDefault();
+        alert("Form submitted! Name: " + document.getElementById("name").value + ", Phone: " + document.getElementById("phone").value);
+        modal.style.display = "none"; // Close the modal after submission
+    }
 
 
 </script>
