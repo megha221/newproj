@@ -19599,4 +19599,19 @@ blockquote,
         font-size: 17px;
         margin: 0 0 5px 15px;
         z-index: 9999;
-      }
+      }body {
+        background: linear-gradient(to right, #c2e7ff, #e6f7ff); /* Adjust colors as needed */
+        min-height: 100vh;
+    }
+    
+    .carousel-item {
+        background: linear-gradient(to right, #c2e7ff, #e6f7ff); /* Same gradient for consistency */
+        height: 80vh;
+    }
+    
+    .carousel-caption {
+        background: rgba(0, 0, 0, 0.4); /* Slight overlay for readability */
+        padding: 15px;
+        border-radius: 10px;
+    }
+    
